@@ -14,10 +14,10 @@ function Controller() {
     var urls = {
         'GetUsers': 'https://my-json-server.typicode.com/wallouf/json-fake-server-test/users',
         'AddUsers': ' https://my-json-server.typicode.com/wallouf/json-fake-server-test/users',
-        'DeleteUsers':' https://my-json-server.typicode.com/wallouf/json-fake-server-test/users/<id>',
-        'EditUsers':' https://my-json-server.typicode.com/wallouf/json-fake-server-test/users/<id>'
+        'DeleteUsers': 'https://my-json-server.typicode.com/wallouf/json-fake-server-test/users',
+        'EditUsers': 'https://my-json-server.typicode.com/wallouf/json-fake-server-test/users'
     }
-    var clients = {};
+    
     return service;
 
 
@@ -28,16 +28,17 @@ function Controller() {
     }
 
 
-    function addRecord(fname, lanme, place) {
+    function addRecord(fname, lname, Bplace) {
+        user = {
 
-        return jQuery.post(urls.AddUsers,   // url
-             { myData: { 'fname': clients.fname, 'lanme': clients.lanme, 'place': clients.place}}, // data to be submit
-             function (data, status, jqXHR) {// success callback
-                 clientobj = JSON.stringify(clients);
-                 console.log(clientobj);
-                 console.log(clients);
-               console.log(' fname: ' + data.fname +', lanme: ' + data.lname +',place: ' + data.place);
-            },'json')
+            'firsname': fname,
+            'lastname': lname,
+            'birhtplace': Bplace
+        }
+        return jQuery.post(urls.AddUsers,user,
+             function (data, status, jqXHR) {
+                // console.log(data);
+            })
     }
 
 
@@ -45,11 +46,10 @@ function Controller() {
     function deleteRecord(id) {
 
          $.ajax({
-             url: urls.DeleteUsers + "/" + clients.id,
+             url: urls.DeleteUsers + "/" + id,
             method: 'DELETE',
-            contentType: 'application/json',
             success: function (result) {
-                console.log("this id " + clients.id+" is deleted");
+                console.log("this id " + id+" is deleted");
             }
         });
         
@@ -57,15 +57,18 @@ function Controller() {
     }
 
 
-    function updateRecord(id, fname, lanme,place) {
+    function updateRecord(id) {
+        user = {
+
+           fname: "farshid",
+            lname: "rezaei",
+            Bplace: "jolfa"
+        }
       return  $.ajax({
-          url: urls.EditUsers + "/" + clients.id,
+          url: urls.EditUsers + "/" + id,user,
             method: "PUT",
-            data: {
-                text: newcontent,
-            },
-            success: function (data) {
-                console.log("this id " + clients.id + " is edited");
+          success: function (data) {
+              console.log("this id " + id + " " + user.fname);
                 
             }
         });
@@ -79,6 +82,7 @@ function Controller() {
 
 var myController = Controller();
 myController.getItems();
-myController.addRecord(fatemeh, karimi, tehran);
+//myController.addRecord('fatemeh', 'karimi', 'tehran');
+myController.addRecord('fatemeh', 'karimi', 'tehran').then(function (user) {console.log(user) });
 myController.deleteRecord(3);
-myController.updateRecord(3);
+myController.updateRecord(5);
