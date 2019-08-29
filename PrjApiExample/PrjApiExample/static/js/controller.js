@@ -1,4 +1,4 @@
-﻿//debugger
+﻿
 function Controller() {
 
     
@@ -22,27 +22,33 @@ function Controller() {
 
 
     function getItems() {
-        return jQuery.get(urls.GetUsers, function (data) {
+        return $.get(urls.GetUsers, function (data) {
             console.log(data);
         });
     }
+    //add user
+    //output:promise
 
-
-    function addRecord(fname, lname, Bplace) {
+    function addRecord(fname, lname, bplace) {
         user = {
 
             'firsname': fname,
             'lastname': lname,
-            'birhtplace': Bplace
+            'birhtplace': bplace
         }
-        return jQuery.post(urls.AddUsers,user,
+        return $.post(urls.AddUsers,user,
              function (data, status, jqXHR) {
                 // console.log(data);
-            })
+            }
+            
+          
+        ) 
+
     }
 
 
-
+    //delete user
+    //output:promise
     function deleteRecord(id) {
 
          $.ajax({
@@ -50,27 +56,36 @@ function Controller() {
             method: 'DELETE',
             success: function (result) {
                 console.log("this id " + id+" is deleted");
-            }
+             }
+             ,
+             error: function (e) {
+                 alert("error");
+             }
         });
         
         
     }
 
-
-    function updateRecord(id) {
+    //edit user
+    //output:promise
+    function updateRecord(id,fname,lname,bplace) {
         user = {
-
-           fname: "farshid",
-            lname: "rezaei",
-            Bplace: "jolfa"
+            'id':id,
+            'firsname': fname,
+            'lastname': lname,
+            'birhtplace': bplace
         }
       return  $.ajax({
           url: urls.EditUsers + "/" + id,user,
             method: "PUT",
-          success: function (data) {
-              console.log("this id " + id + " " + user.fname);
+          success: function (res) {
+            // console.log("this id " + id + " " + user.firsname + "      edited");
                 
-            }
+          }
+          ,
+          error: function (e) {
+              alert("error");
+          }
         });
     }
 
@@ -79,10 +94,12 @@ function Controller() {
 
 
 }
-
+''
 var myController = Controller();
-myController.getItems();
+
 //myController.addRecord('fatemeh', 'karimi', 'tehran');
 myController.addRecord('fatemeh', 'karimi', 'tehran').then(function (user) {console.log(user) });
 myController.deleteRecord(3);
-myController.updateRecord(5);
+myController.updateRecord(2, 'farshid', 'rezaei', 'jolfa').then(function (res) { console.log(user)});
+
+myController.getItems();
