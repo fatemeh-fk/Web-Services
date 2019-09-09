@@ -94,12 +94,12 @@ function Controller() {
 
 
 }
-''
-var myController = Controller();
 
-//myController.addRecord('fatemeh', 'karimi', 'tehran');
-myController.addRecord('fatemeh', 'karimi', 'tehran').then(function (user) {console.log(user) });
-myController.deleteRecord(3);
-myController.updateRecord(2, 'farshid', 'rezaei', 'jolfa').then(function (res) { console.log(user)});
+//var myController = Controller();
 
-myController.getItems();
+////myController.addRecord('fatemeh', 'karimi', 'tehran');
+//myController.addRecord('fatemeh', 'karimi', 'tehran').then(function (user) {console.log(user) });
+//myController.deleteRecord(3);
+//myController.updateRecord(2, 'farshid', 'rezaei', 'jolfa').then(function (res) { console.log(user)});
+
+//myController.getItems();
