@@ -1,15 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <title></title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <meta charset="UTF-8"><script src="static/js/controller.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="static/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="static/js/main.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
+
 </style>
 <body>
 
@@ -17,7 +20,7 @@ body {font-size:16px;}
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Pajak <br>service</b></h3>
+    <h3 class="w3-padding-64"><b>Expertus <br>service</b></h3>
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">our client</a> 
@@ -42,40 +45,33 @@ body {font-size:16px;}
     <!--<h1 class="w3-jumbo"><b>Interior Design</b></h1>-->
     <h1 class="w3-xxxlarge w3-text-red"><b>our clients.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
+     <div id="container" style="overflow-x:auto;">
+       <table id="myTable">
+              <tr>
+                  <th>id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>birth place</th>
+              </tr>
+           </table>
+        </div>
+    <h4>ADD a new client</h4>
+    <p>first name:<input type="text"class="form-control" id="fname-"</p>
+    <p>last name:<input type="text" class="form-control"id="lname-"</p>
+    <p>birth place:<input type="text"class="form-control" id="bplace-"</p>
+    <button class="btn btn-primary" id="add">ADD</button>
   </div>
+
+   
   
-  <!-- Photo grid (modal) -->
-  <!--<div class="w3-row-padding">
-    <div class="w3-half">
-      <img src="/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
-      <img src="/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
-    </div>
-
-    <div class="w3-half">
-      <img src="/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-      <img src="/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-      <img src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
-    </div>
-  </div>-->
-
-  <!-- Modal for full size images on click-->
-<!--  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>-->
+  
 
   <!-- Services -->
   <div class="w3-container" id="services" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>Our cloud-based Payment Factory uses advanced technology to increase cash flow visibility and lower operating costs. It is a multi-bank global treasury system that facilitate domestic and cross border payments, cash pooling, forecasting, liquidity !</p>
+    <p>Expertus, a Montreal-based Fintech founded in 2001, is a leader in payments and cash management solutions. Pioneer in Cloud solutions in the banking industry, Expertus provides services to corporates, financial institutions, fund managers and market infrastructures.Our innovative products enable customers to accelerate their digital transformation while complying with the continuously increasing regulation. Expertus favours implementation through partnership to enhance cooperation and preserve flexibility against changes.
     </p>
   </div>
   
@@ -83,28 +79,7 @@ body {font-size:16px;}
 
  
   
-  <!-- Contact -->
-  <!--<div class="w3-container" id="contact" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
-    </form>  
-  </div>-->
-
+ 
 <!-- End page content -->
 </div>
 
